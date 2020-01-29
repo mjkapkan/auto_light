@@ -8,10 +8,12 @@ Currently supported on Windows only.
  - External monitors are controlled using DDCI trough modified mccs module from https://github.com/ChristopherHammond13/ddc-windows/blob/master/mccs.py
  - Laptop monitor is controlled using wmi module
 
-## Usage
+## Installation
 
 Just download and extract the contents of the bin directory and run auto_light.exe
 If you want to run the native .py file, don't forget do download additional python modules and after downloading all contents run auto_light.pyw
+
+## Usage
 
 At current state the app has no GUI, just a tray icon. So the settings can be changed only using config file.
 At first run it will create the following json file:
