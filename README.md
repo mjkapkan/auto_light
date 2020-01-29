@@ -10,6 +10,9 @@ Currently supported on Windows only.
 
 ## Usage
 
+Just download and extract the contents of the bin directory and run auto_light.exe
+If you want to run the native .py file, don't forget do download additional python modules and after downloading all contents run auto_light.pyw
+
 At current state the app has no GUI, just a tray icon. So the settings can be changed only using config file.
 At first run it will create the following json file:
 json
