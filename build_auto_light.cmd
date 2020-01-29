@@ -1,0 +1,1 @@
+pyinstaller.exe --onefile --windowed -i trayicon.ico --version-file version.info auto_light.pyw
