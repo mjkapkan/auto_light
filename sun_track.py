@@ -1,5 +1,5 @@
-from pysolar.solar import *
-import datetime, operator
+from pysolar.solar import radiation, get_altitude
+import datetime
 
 
 def get_day_data(latitude,longitude):
