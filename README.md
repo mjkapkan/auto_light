@@ -1,6 +1,6 @@
 # Auto Light
 
-Autoamtically adjusts the brightness level for all internal and external monitors based on solar irradience for your location.
+Automatically adjusts the brightness level for all internal and external monitors based on solar irradience for your location.
 
 Currently supported on Windows only.
 
