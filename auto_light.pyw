@@ -20,7 +20,7 @@ path = os.path.realpath('') + '\\'
 user_setting_file = path + 'auto_light_settings.json'
 user_settings = {
     'brightness_min': 50,
-    'brightness_max': 100,
+    'brightness_max': 70,
     'latitude': 54.69,
     'longitude': 25.26
 }
@@ -80,9 +80,12 @@ def send_to_local(brigthness_int):
     print('Executing Command on monitor local')
     wmi.WMI(namespace='wmi').WmiMonitorBrightnessMethods()[0].WmiSetBrightness(brigthness_int, 0)
 
-def change_brightness(value):
-    send_to_local(value)            #changes laptop screen brightness
-    mccs.send_to_all('10',value)    #changes external screen brightness through ddci
+def change_brightness(value,local_offset):
+    try:
+        send_to_local(value + int(local_offset))            #changes laptop screen brightness
+        mccs.send_to_all('10',value)                        #changes external screen brightness through ddci
+    except OSError:
+        dl(5)
 
 start_date = 'start'
 current_brightness = 0
@@ -111,7 +114,7 @@ while True:
         if new_brightness != current_brightness:
             current_brightness = new_brightness
             print('Changing Brightness to: ' + str(current_brightness))
-            change_brightness(current_brightness)
+            change_brightness(current_brightness,user_settings['laptop_brightness_offset'])
         main_icon.menu = update_icon_menu()
         main_icon.update_menu()
         dl(2)
